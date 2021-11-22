@@ -45,21 +45,34 @@ components:
       type: object
       required:
         - id
-        - symbolid
         - symbol
         - exchange
+        - instrumentType
+        - dataGranularity
+        - validRanges
+        - datafrom
       properties:
         id:
           type: string
           format: uuid
           example: d290f1ee-6c54-4b01-90e6-d701748f0851
-        symbolid:
-          type: integer
-          example: 11234
         symbol:
           type: string
           example: symbol like 'SBI'
         exchange:
           type: string
           example: can be nse or bse
-
+        instrumentType:
+          type: string
+          example: either nse or bse
+        dataGranularity:
+          type: array
+          items:
+            enum: ["1m", "2m", "5m", "15m", "30m", "60m", "90m", "1h", "1d", "5d", "1wk", "1mo", "3mo"]
+        validRanges:
+          type: array
+          items:
+            enum: ["1d","5d","1mo","3mo","6mo","1y","2y","5y","10y","ytd","max"]
+        datafrom:
+          type: string
+          example: can be from zerodha or yahoo etc
