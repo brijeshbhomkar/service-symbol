@@ -11,17 +11,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "datagranularity")
-public class DataGranularity implements Serializable {
+@Table(name = "interval")
+public class Interval implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "granularity")
-    private String dataGranularity;
+    @Column(name = "intervl")
+    private String interval;
 
-    @ManyToOne
-    @JoinColumn(name = "name", nullable = false)
-    private Symbol symbol;
 }

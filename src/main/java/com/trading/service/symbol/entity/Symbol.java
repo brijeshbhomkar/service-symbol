@@ -31,9 +31,9 @@ public class Symbol implements Serializable {
     @Column(name = "dtfrom")
     private String datafrom;
 
-    @OneToMany(mappedBy = "range")
+    @Transient
     private List<Range> rangeList;
 
-    @OneToMany(mappedBy = "datagranularity")
-    private List<DataGranularity> granularityList;
+    @Transient
+    private List<Interval> granularityList;
 }

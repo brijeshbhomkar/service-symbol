@@ -1,9 +1,9 @@
 package com.trading.service.symbol.repository;
 
-import com.trading.service.symbol.entity.DataGranularity;
+import com.trading.service.symbol.entity.Range;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DataGranularityRepository extends JpaRepository<DataGranularity, Long> {
+public interface RangeRepository extends JpaRepository<Range, Long> {
 }

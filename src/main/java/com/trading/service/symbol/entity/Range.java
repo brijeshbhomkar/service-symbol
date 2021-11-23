@@ -1,8 +1,6 @@
 package com.trading.service.symbol.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +8,8 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Setter
+@Getter
 @Table(name = "range")
 public class Range implements Serializable {
 
@@ -21,7 +20,4 @@ public class Range implements Serializable {
     @Column(name = "rangeid")
     private String rangeId;
 
-    @ManyToOne
-    @JoinColumn(name = "name", nullable = false)
-    private Symbol symbol;
 }
