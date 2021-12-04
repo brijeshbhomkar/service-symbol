@@ -39,7 +39,7 @@ public class DataLoader {
     }
 
     private List<Interval> getIntervals() {
-        return Stream.of(interval).map(this::mapToInterval).collect(Collectors.toUnmodifiableList()).get(0);
+        return Stream.of(interval).map(this::mapToInterval).collect(Collectors.toList()).get(0);
     }
 
     private List<Interval> mapToInterval(List<String> intervals) {
@@ -53,7 +53,7 @@ public class DataLoader {
     }
 
     private List<Range> getRanges() {
-        return Stream.of(ranges).map(this::mapToRanges).collect(Collectors.toUnmodifiableList()).get(0);
+        return Stream.of(ranges).map(this::mapToRanges).collect(Collectors.toList()).get(0);
     }
 
     private List<Range> mapToRanges(List<String> ranges) {

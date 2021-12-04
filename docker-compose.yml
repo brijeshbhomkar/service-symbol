@@ -1,0 +1,40 @@
+version: "3"
+services:
+  postgres-container:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: postgres-container
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=p0stgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=symboldb
+    restart: unless-stopped
+
+  symbol-service-app-container:
+    image: symbol-service-app:latest
+    network_mode: bridge
+    container_name: symbol-service-app-container
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-container:5432/symboldb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: p0stgres
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    restart: unless-stopped
+    depends_on:
+      - postgres-container
+    links:
+      - postgres-container
+volumes:
+  postgres-data:
