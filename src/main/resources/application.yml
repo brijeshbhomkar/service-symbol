@@ -5,7 +5,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/symboldb
+    url: jdbc:postgresql://postgres-container:5432/symboldb
     username: postgres
     password: p0stgres
     pool-size: 30
