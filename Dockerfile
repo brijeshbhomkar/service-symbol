@@ -3,5 +3,5 @@ VOLUME /tmp
 EXPOSE 8082
 RUN mkdir -p /app/
 RUN mkdir -p /app/logs/
-ADD /app/target/service-symbol.jar /app/service-symbol.jar
+ADD target/service-symbol-0.0.1-SNAPSHOT.jar /app/service-symbol.jar
 ENTRYPOINT ["java", "-jar", "/app/service-symbol.jar"]
