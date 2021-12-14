@@ -148,7 +148,7 @@
 							<arguments>
 								<argument>build</argument>
 								<argument>-t</argument>
-								<argument>${project.artifactId}:${project.version}</argument>
+								<argument>${docker.user}/${project.artifactId}:${project.version}</argument>
 								<argument>.</argument>
 							</arguments>
 							<longModulepath>false</longModulepath>
