@@ -219,7 +219,7 @@
 					<executable>true</executable>
 					<jvmArguments>
 						-Xms256m
-						-Xmx2g
+						-Xmx1024m
 					</jvmArguments>
 				</configuration>
 			</plugin>
