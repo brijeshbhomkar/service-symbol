@@ -6,6 +6,7 @@ import com.trading.service.symbol.repository.SymbolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -29,5 +30,10 @@ public class SymbolController implements SymbolApi {
         symbolRepository.save(symbol);
 
         return new ResponseEntity(symbols, HttpStatus.OK);
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "Test successful!!..";
     }
 }
